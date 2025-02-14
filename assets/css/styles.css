@@ -137,6 +137,10 @@ input::placeholder {
   font-weight: 600;
   font-size: 16px;
   border-radius: 8px;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  transform: translateY(-3px);
 }
 .btn-secondary {
   background: linear-gradient(
@@ -165,9 +169,11 @@ input::placeholder {
   border: 1px solid var(--lavender);
   background: var(--lavender);
   color: var(--light);
+  transform: translateY(-3px);
 }
 .btn-primary:hover {
   filter: brightness(1.1);
+  transform: translateY(-3px);
 }
 .mx-850 {
   max-width: 850px;
@@ -252,6 +258,10 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+.glowing-button a:hover {
+  transform: translateY(-3px);
 }
 /* ======================================
  *  02. Header
@@ -1640,4 +1650,26 @@ footer p {
   .search-bar {
     display: none;
   }
+}
+
+/* Add to existing styles */
+.hero-btn .btn {
+  transition: all 0.3s ease;
+}
+
+.hero-btn .btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Update existing hero button hover states to maintain other effects */
+.hero-btn .btn-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px);
+}
+
+.hero-btn .btn-tertiary:hover {
+  border: 1px solid var(--lavender);
+  background: var(--lavender);
+  color: var(--light);
+  transform: translateY(-3px);
 }
