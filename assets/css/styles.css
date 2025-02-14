@@ -137,10 +137,10 @@ input::placeholder {
   font-weight: 600;
   font-size: 16px;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
-.btn:hover {
-  transform: none;
+.btn:not(.hero-btn .btn):hover {
+  transform: translateY(-3px);
 }
 .btn-secondary {
   background: linear-gradient(
@@ -164,15 +164,16 @@ input::placeholder {
   color: var(--light-600);
 }
 
-.btn-secondary:hover,
-.btn-tertiary:hover {
+.btn-secondary:not(.hero-btn .btn-secondary):hover,
+.btn-tertiary:not(.hero-btn .btn-tertiary):hover {
   border: 1px solid var(--lavender);
   background: var(--lavender);
   color: var(--light);
-  transform: none;
+  transform: translateY(-3px);
 }
-.btn-primary:hover {
+.btn-primary:not(.hero-btn .btn-primary):hover {
   filter: brightness(1.1);
+  transform: translateY(-3px);
 }
 .mx-850 {
   max-width: 850px;
@@ -257,10 +258,10 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .glowing-button a:hover {
-  transform: none;
+  transform: translateY(-3px);
 }
 /* ======================================
  *  02. Header
@@ -1649,4 +1650,42 @@ footer p {
   .search-bar {
     display: none;
   }
+}
+
+/* Restore hover effects for hero banner buttons */
+.hero-btn .btn-tertiary:hover {
+  border: 1px solid var(--lavender);
+  background: var(--lavender);
+  color: var(--light);
+}
+
+.hero-btn .btn-primary:hover {
+  filter: brightness(1.1);
+}
+
+/* Keep other button animations (excluding hero banner) */
+.btn:not(.hero-btn .btn):hover {
+  transform: translateY(-3px);
+}
+
+.btn-primary:not(.hero-btn .btn-primary):hover {
+  filter: brightness(1.1);
+  transform: translateY(-3px);
+}
+
+.btn-secondary:not(.hero-btn .btn-secondary):hover,
+.btn-tertiary:not(.hero-btn .btn-tertiary):hover {
+  border: 1px solid var(--lavender);
+  background: var(--lavender);
+  color: var(--light);
+  transform: translateY(-3px);
+}
+
+/* Glowing button animation */
+.glowing-button a {
+  transition: all 0.2s ease;
+}
+
+.glowing-button a:hover {
+  transform: translateY(-3px);
 }
