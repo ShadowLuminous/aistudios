@@ -382,11 +382,12 @@ header nav ul li a.active::after {
   margin-bottom: 16px;
 }
 .hero-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-  margin: 32px 0 48px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 64px;
+}
+.hero-btn a {
+  margin: 0 10px;
 }
 .hero-chat {
   padding: 31px;
@@ -474,6 +475,9 @@ header nav ul li a.active::after {
 .hero-chat-input button svg {
   width: 24px;
   height: 24px;
+}
+.hero-brand {
+  margin-top: 32px;
 }
 .hero-brand p {
   margin-bottom: 32px;
@@ -1703,4 +1707,21 @@ footer p {
 
 .glowing-button a:hover {
   transform: translateY(-3px);
+}
+
+/* Add these media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    .hero-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 64px;
+    }
+
+    .hero-btn a {
+        margin: 0;
+        width: 80%;
+        max-width: 300px;
+    }
 }
