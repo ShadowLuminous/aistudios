@@ -3,12 +3,40 @@ const mobileMenuOpenIcon = document.querySelector(".mobile-menu-open-icon");
 const mobileMenuCloseIcon = document.querySelector(".mobile-menu-close-icon");
 const mobileMenu = document.querySelector(".mobile-menu");
 
-function toggleMobileMenu() {
-  mobileMenu.classList.toggle("show-menu");
-}
+// Open menu
+mobileMenuOpenIcon.addEventListener("click", () => {
+  mobileMenu.classList.add("show-menu");
+});
 
-mobileMenuOpenIcon.addEventListener("click", toggleMobileMenu);
-mobileMenuCloseIcon.addEventListener("click", toggleMobileMenu);
+// Close menu
+mobileMenuCloseIcon.addEventListener("click", () => {
+  mobileMenu.classList.remove("show-menu");
+});
+
+// Handle mobile menu links
+document.querySelectorAll(".mobile-menu nav ul li a").forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+    
+    // First close the menu with animation
+    mobileMenu.classList.remove("show-menu");
+    
+    // Wait for menu close animation to complete before scrolling
+    setTimeout(() => {
+      // If it's a section on the current page
+      if (href.startsWith("#")) {
+        const section = document.querySelector(href);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // If it's a link to another page with a section
+        window.location.href = href;
+      }
+    }, 300); // Match this with your CSS transition time
+  });
+});
 
 // Pricing
 window.onload = function () {

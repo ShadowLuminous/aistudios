@@ -1725,3 +1725,15 @@ footer p {
         max-width: 300px;
     }
 }
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 30px;
+    background: linear-gradient(180deg, #2b153f 0%, #180f28 100%);
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
